@@ -966,3 +966,354 @@ html {
 }
 @keyframes toastIn { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
+
+
+/* --- СЕКЦИЯ 3: ПРОСТРАНСТВО (СТИЛЬ ИЗ 1 УРОКА) --- */
+
+.third-lesson-area {
+    margin-top: 180px !important; /* Увеличил отступ, чтобы секции дышали */
+    padding-bottom: 150px;
+}
+
+.results-wrapper-v3 {
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Расстояние между парой "Воздух" и парой "Переносы" */
+    align-items: center;
+    margin-top: 60px;
+}
+
+/* ТВОЙ ОРИГИНАЛЬНЫЙ КОД КАРТОЧЕК */
+.results-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    transition: 0.4s;
+    position: relative;
+}
+
+.result-header {
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.result-body {
+    position: relative;
+    display: inline-block;
+}
+
+.result-img {
+    width: 100%;
+    max-width: 250px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.indicator-icon {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+    border: 4px solid #060108;
+}
+
+/* Цвета для ОШИБКИ */
+.result-card.error .result-header { color: #ff4b6b; }
+.result-card.error .indicator-icon { 
+    background: #ff4b6b; 
+    box-shadow: 0 0 20px rgba(255, 75, 107, 0.4); 
+}
+.result-card.error:hover { border-color: rgba(255, 75, 107, 0.3); }
+
+/* Цвета для УСПЕХА */
+.result-card.success .result-header { color: #00ff73; }
+.result-card.success .indicator-icon { 
+    background: #00ff73; 
+    box-shadow: 0 0 20px rgba(0, 255, 115, 0.4); 
+}
+.result-card.success:hover { border-color: rgba(0, 255, 115, 0.3); }
+
+.result-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-10px);
+}
+
+
+/* --- SECTION 4: HORIZONTAL SCANS STYLE --- */
+
+.horizontal-results-stack {
+    display: flex;
+    flex-direction: column; /* Ставим карточки в стопку */
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+/* Широкая карточка */
+.result-card.wide-layout {
+    width: 100%;
+    max-width: 850px; /* Оптимальная ширина для горизонталок */
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 24px;
+}
+
+.result-img-wide {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    filter: drop-shadow(0 15px 40px rgba(0,0,0,0.6));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: block;
+}
+
+/* Поправка иконки для широкого формата */
+.result-card.wide-layout .indicator-icon {
+    bottom: -15px;
+    right: 10px;
+}
+
+/* Ховер эффект остается как в 1 уроке */
+.result-card.wide-layout:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(0, 255, 115, 0.3);
+}
+
+/* --- PRO COMPARISON MODULE --- */
+
+.pro-comparison-module {
+    margin-top: 60px;
+    background: #0d0d12;
+    border: 1px solid rgba(176, 38, 255, 0.2);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+}
+
+.module-header {
+    background: #15151a;
+    padding: 15px 30px;
+    border-bottom: 1px solid #222;
+}
+
+.module-tag {
+    font-size: 10px;
+    font-weight: 900;
+    color: #b026ff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.module-main {
+    display: grid;
+    grid-template-columns: 1fr 100px; /* Изображение + Панель ползунка */
+    background: #000;
+}
+
+/* Вьюпорт с наложением */
+.overlap-viewport {
+    position: relative;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(circle, #1a1a20 1px, transparent 1px);
+    background-size: 30px 30px; /* Сетка как в дизайн-редакторах */
+}
+
+.img-base {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 40px; /* Соответствует паддингу вьюпорта */
+    max-width: calc(100% - 80px); /* 40px + 40px */
+    height: auto;
+    opacity: 0.5;
+    pointer-events: none; /* Чтобы не мешала скроллу */
+}
+
+/* Вертикальный ползунок */
+.control-sidebar {
+    background: #15151a;
+    border-left: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.control-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+.vertical-slider-container {
+    height: 250px;
+    display: flex;
+    align-items: center;
+}
+
+#opacity-slider {
+    -webkit-appearance: slider-vertical; /* Для Safari/Chrome */
+    appearance: slider-vertical;
+    width: 8px;
+    height: 100%;
+    background: #222;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Стилизация ползунка для Chrome */
+#opacity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #b026ff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #b026ff;
+}
+
+.percent-display {
+    margin-top: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    color: #b026ff;
+}
+
+.module-footer {
+    padding: 20px;
+    background: #0d0d12;
+    border-top: 1px solid #222;
+}
+
+.footer-hint {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+
+/* --- MESSENGER UI --- */
+.lumi-final-section { padding: 100px 0; background: #050508; }
+
+.lumi-chat-card {
+    max-width: 500px; margin: 0 auto; background: #0d0d12;
+    border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden;
+}
+
+.chat-head { padding: 20px; background: rgba(176,38,255,0.03); border-bottom: 1px solid #1a1a20; }
+.chat-user { display: flex; align-items: center; gap: 15px; }
+.chat-ava { width: 50px; height: 50px; border-radius: 12px; border: 2px solid #b026ff; object-fit: cover; }
+.chat-name { display: block; font-weight: 900; font-size: 16px; color: #fff; }
+.chat-online { font-size: 10px; color: #00ff8c; text-transform: uppercase; }
+
+.chat-content { padding: 25px; display: flex; flex-direction: column; gap: 12px; }
+.chat-msg { background: #1a1a22; padding: 15px 20px; border-radius: 18px 18px 18px 4px; font-size: 14px; color: #ccc; line-height: 1.5; }
+.chat-msg.promo { border-left: 3px solid #b026ff; background: linear-gradient(90deg, rgba(176,38,255,0.04), transparent); }
+
+.chat-actions { padding: 20px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 15px; background: #0a0a0f; }
+.chat-link, .chat-btn-main { 
+    padding: 14px; border-radius: 12px; font-weight: 900; border: none; cursor: pointer; transition: 0.3s;
+    text-align: center; text-decoration: none; font-size: 13px; font-family: 'Montserrat';
+}
+.chat-link { background: #1a1a20; color: #888; }
+.chat-btn-main { background: #b026ff; color: #fff; box-shadow: 0 8px 20px rgba(176,38,255,0.2); }
+.chat-btn-main:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(176,38,255,0.4); }
+
+/* --- MODAL UI --- */
+.lumi-modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(15px); display: none; justify-content: center; align-items: center; z-index: 10000;
+}
+
+.lumi-modal-box {
+    background: #09090e; width: 480px; padding: 45px; border-radius: 35px;
+    border: 1px solid rgba(176, 38, 255, 0.2); position: relative; color: #fff;
+}
+
+.lumi-modal-close {
+    position: absolute; top: 20px; right: 20px; background: none; border: none;
+    color: #444; font-size: 30px; cursor: pointer; transition: 0.3s;
+}
+.lumi-modal-close:hover { color: #ff4d4d; }
+
+.lumi-form-grid { display: flex; flex-direction: column; gap: 18px; margin-top: 30px; }
+.lumi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+/* Кастомные инпуты */
+.lumi-form-grid input {
+    width: 100%; background: #111116; border: 1px solid #1a1a20;
+    padding: 16px; border-radius: 16px; color: #fff; outline: none; transition: 0.3s; font-size: 14px;
+}
+.lumi-form-grid input:focus { border-color: #b026ff; background: #15151e; }
+
+/* --- CUSTOM SELECTS --- */
+.lumi-select { position: relative; user-select: none; }
+.lumi-select-trigger {
+    background: #111116; border: 1px solid #1a1a20; padding: 16px; border-radius: 16px;
+    color: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px; transition: 0.3s;
+}
+.lumi-select-trigger:hover { border-color: #b026ff; }
+.lumi-arrow { border: solid #b026ff; border-width: 0 2px 2px 0; padding: 3px; transform: rotate(45deg); transition: 0.3s; }
+
+.lumi-options {
+    position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+    background: #0d0d12; border: 1px solid #1a1a20; border-radius: 16px;
+    padding: 8px; z-index: 100; display: none; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+.lumi-select.open .lumi-options { display: block; }
+.lumi-select.open .lumi-arrow { transform: rotate(-135deg); }
+
+.lumi-opt { padding: 12px 16px; border-radius: 10px; color: #888; cursor: pointer; transition: 0.2s; font-size: 14px; }
+.lumi-opt:hover { background: rgba(176, 38, 255, 0.1); color: #fff; }
+
+/* --- CUSTOM CHECKBOX --- */
+.lumi-check-container { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.lumi-check-container input { display: none; }
+.lumi-checkmark {
+    width: 22px; height: 22px; background: #111116; border: 2px solid #1a1a20;
+    border-radius: 8px; position: relative; transition: 0.3s;
+}
+.lumi-check-container input:checked + .lumi-checkmark { background: #b026ff; border-color: #b026ff; }
+.lumi-check-container input:checked + .lumi-checkmark::after {
+    content: '✓'; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff; font-weight: 900;
+}
+.lumi-check-text { font-size: 13px; color: #666; }
+
+.lumi-send-btn {
+    background: #00ff8c; color: #000; font-weight: 900; padding: 18px;
+    border-radius: 18px; border: none; cursor: pointer; transition: 0.3s; margin-top: 10px; font-family: 'Montserrat';
+}
+.lumi-send-btn:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(0, 255, 140, 0.3); }
