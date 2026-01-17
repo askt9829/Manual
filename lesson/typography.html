@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumiere Solo — Висячая пунктуация</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="editor-body">
+
+    <section class="lesson-intro reveal active lesson-header-fix">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-bg-icon">¶</div>
+                <h2 class="section-title">Висячая пунктуация</h2>
+                <p class="section-subtitle">Оптическая компенсация знаков в бабле</p>
+            </div>
+            
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <h3 class="theory-title">Что это такое?</h3>
+                    <p class="theory-text">Это вынос знаков за визуальную границу текста. Без этого буквы кажутся смещенными из-за "легких" точек.</p>
+                </div>
+                <div class="intro-card">
+                    <h3 class="theory-title">Как лечить?</h3>
+                    <p class="theory-text">Добавь "пустой вес" слева: либо невидимыми точками (метод закрашивания), либо пробелами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lab-section">
+        <div class="container">
+            <div id="popup-container"></div>
+
+            <div class="editor-frame">
+                <aside class="editor-sidebar">
+                    <span class="sidebar-label">Инструменты</span>
+                    <div class="tool-item">
+                        <button id="paint-white" class="color-swatch-white" title="Закрасить точки"></button>
+                        <p class="tool-caption">Закрасить ввод</p>
+                    </div>
+                    <button onclick="location.reload()" class="btn-reset-ui">Сбросить холст</button>
+                </aside>
+
+                <main class="editor-canvas">
+                    <div class="axis-guide"></div>
+                    <div class="manga-bubble-pro">
+                        <div class="input-wrapper">
+                            <span id="user-input-zone" contenteditable="true" spellcheck="false"></span><span class="static-text">ХАЙ...</span>
+                        </div>
+                        <div class="reference-line">ХАЙ</div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <script src="lesson2.js"></script>
+</body>
+</html>
